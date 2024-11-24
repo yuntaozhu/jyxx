@@ -17,14 +17,794 @@
     <link rel="stylesheet" href="/shengbenji/css/detail.css">
     <script src="/shengbenji/js/lib/jquery.min.js"></script>
     <!--[if lt IE 9]>
-    <script src="/shengbenjijs/respond.min.js"></script>
+    <script src="/shengbenji/js/lib/respond.min.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="/shengbenji/css/webBuilderCommonGray.css"></head>
-
-<body>
+    <link rel="stylesheet" href="/shengbenji/css/webBuilderCommonGray.css">
+</head>
+<body style="">
 <!-- header -->
-<div id="header"></div>
+<div id="header"><div class="ewb-header">
+    <div class="ewb-top">
+        <div class="ewb-container clearfix">
+            <span class="l" id="datetime">2024年11月24日 星期日 </span>
+            <span class="ewb-wea l"><iframe allowtransparency="true" frameborder="0" width="300" height="25" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=3&amp;z=1&amp;t=1&amp;v=0&amp;d=1&amp;bd=0&amp;k=&amp;f=ffffff&amp;ltf=ffffff&amp;htf=ffffff&amp;q=1&amp;e=0&amp;a=1&amp;c=57494&amp;w=300&amp;h=25&amp;align=center"></iframe></span>
+            <span class="ewb-top-link r">
+                <a href="javascript:void(0);" onclick="SetHome(this,window.location)" style="cursor:hand">设为首页</a>
+                <span>|</span>
+                  <a href="javascript:void(0);" onclick="AddFavorite(window.location,document.title)" style="cursor:hand">加入收藏</a>
+				    <span>|</span>
+                  <a href="http://221.232.224.119:8090/jydt/003001/003001005/333.html" target="_blank" style="cursor:hand">历史公告查看</a>
+            </span>
+        </div>
+    </div>
+    <div class="ewb-container clearfix">
+        <img id="logic" alt="" class="ewb-logo l" src="/shengbenji/images/szx.png">
+    </div>
+</div>
+
+    <div class="ewb-nav">
+        <div class="ewb-nav-left"></div>
+        <div class="ewb-container ewb-nav-item clearfix">
+            <div class="ewb-nav-box l">
+                <ul class="ewb-nav-items" id="mean">
+                    <li class="l" id="000">
+                        <a href="/shengbenji/">首页</a>
+                    </li>
+
+                    <li class="l" id="002">
+                        <a href="/shengbenji/tzgg/about.html">通知公告</a>
+                    </li>
+
+                    <li class="l cur" id="004">
+                        <a href="/shengbenji/jyxx/about.html">交易信息</a>
+                    </li>
+
+                    <li class="l" id="006">
+                        <a href="/shengbenji/bszn/006001/about.html">服务指南</a>
+                    </li>
+
+                    <li class="l" id="007">
+                        <a href="/shengbenji/xzzq/about.html">下载专区</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="ewb-nav-search r">
+                <span class="ewb-nav-label l">全站搜索：</span>
+                <input type="text" class="ewb-nav-input l" style="width: 173px;" placeholder="请输入关键字" onfocus="this.placeholder=''" onblur="this.placeholder='请输入关键字'" id="wd">
+                <button class="ewb-nav-btn l" onclick="search();">搜 索</button> &nbsp;
+                <button class="ewb-nav-btn l" style="margin-left: 10px;" onclick="searchgj();">高级搜索</button>
+            </div>
+        </div>
+    </div>
+    <div class="ewb-container">
+        <div class="tabview">
+            <div class="ewb-service-hd">
+                <ul class="clearfix">
+                    <li class="ewb-service-tab cur">
+                        <a href="http://www.hbbidcloud.cn/">全省</a>
+                    </li>
+                    <li class="ewb-service-tab">
+
+                        <a href="/shengbenji/" id="省中心">省中心</a>
+                    </li>
+                    <li class="ewb-service-tab none">
+                        <a href="javascript:void(0);">武汉市</a>
+                        <!-- <div class="ewb-service-con">
+							</div> -->
+                    </li>
+                    <li class="ewb-service-tab none">
+                        <a href="javascript:void(0);">襄阳市</a>
+                        <!-- <div class="ewb-service-con">
+                            </div> -->
+                    </li>
+                    <li class="ewb-service-tab none">
+                        <a href="javascript:void(0);">宜昌市</a>
+                        <!-- <div class="ewb-service-con">
+                            </div> -->
+                    </li>
+                    <li class="ewb-service-tab none">
+                        <a href="javascript:void(0);">黄石市</a>
+                        <!-- <div class="ewb-service-con">
+                            </div>-->
+                    </li>
+                    <li class="ewb-service-tab">
+                        <a href="/shiyan/">十堰市</a>
+                        <div class="ewb-service-con">
+
+                            <a href="/danjiangkou/" class="ewb-service-btn" id="丹江口市">丹江口市</a>
+
+                            <a href="/fangxian/" class="ewb-service-btn" id="房县">房县</a>
+
+                            <a href="/zhuxi/" class="ewb-service-btn" id="竹溪县">竹溪县</a>
+
+                            <a href="/zhushan/" class="ewb-service-btn" id="竹山县">竹山县</a>
+
+                            <a href="/yunxi/" class="ewb-service-btn" id="郧西县">郧西县</a>
+
+                            <a href="/yunyang/" class="ewb-service-btn" id="郧阳区">郧阳区</a>
+                        </div>
+                    </li>
+                    <li class="ewb-service-tab">
+                        <a href="javascript:void(0);">荆州市</a>
+                        <div class="ewb-service-con">
+
+                            <a href="/songzi/" class="ewb-service-btn" id="松滋市">松滋市</a>
+
+                            <a href="/honghu/" class="ewb-service-btn" id="洪湖市">洪湖市</a>
+
+                            <a href="/shishou/" class="ewb-service-btn" id="石首市">石首市</a>
+
+                            <a href="/jiangling/" class="ewb-service-btn" id="江陵县">江陵县</a>
+
+                            <a href="/jianli/" class="ewb-service-btn" id="监利市">监利市</a>
+
+                            <a href="/gongan/" class="ewb-service-btn" id="公安县">公安县</a>
+                        </div>
+                    </li>
+                    <li class="ewb-service-tab none">
+                        <a href="javascript:void(0);">荆门市</a>
+                        <!-- <div class="ewb-service-con">
+                            </div>-->
+                    </li>
+                    <li class="ewb-service-tab none">
+                        <a href="javascript:void(0);">鄂州市</a>
+                        <!--  <div class="ewb-service-con">
+                             </div>-->
+                    </li>
+                    <li class="ewb-service-tab">
+                        <a href="/xiaogan/">孝感市</a>
+                        <div class="ewb-service-con">
+
+                            <a href="/anlu/" class="ewb-service-btn" id="安陆市">安陆市</a>
+
+                            <a href="/dawu/" class="ewb-service-btn" id="大悟县">大悟县</a>
+
+                            <a href="/yingcheng/" class="ewb-service-btn" id="应城市">应城市</a>
+
+                            <a href="/xiaochang/" class="ewb-service-btn" id="孝昌县">孝昌县</a>
+
+                            <a href="/xiaonan/" class="ewb-service-btn" id="孝南区">孝南区</a>
+
+                            <a href="/yunmeng/" class="ewb-service-btn" id="云梦县">云梦县</a>
+
+                            <a href="/hanchuan/" class="ewb-service-btn" id="汉川市">汉川市</a>
+                        </div>
+                    </li>
+                    <li class="ewb-service-tab">
+                        <a href="/huanggang/">黄冈市</a>
+                        <div class="ewb-service-con">
+
+                            <a href="/longganhu/" class="ewb-service-btn" id="龙感湖新区">龙感湖新区</a>
+
+                            <a href="/xishui/" class="ewb-service-btn" id="浠水县">浠水县</a>
+
+                            <a href="/xiaochi/" class="ewb-service-btn" id="小池新区">小池新区</a>
+
+                            <a href="/wuxue/" class="ewb-service-btn" id="武穴市">武穴市</a>
+
+                            <a href="/macheng/" class="ewb-service-btn" id="麻城市">麻城市</a>
+
+                            <a href="/huangmei/" class="ewb-service-btn" id="黄梅县">黄梅县</a>
+
+                            <a href="/qichun/" class="ewb-service-btn" id="蕲春县">蕲春县</a>
+
+                            <a href="/yingshan/" class="ewb-service-btn" id="英山县">英山县</a>
+
+                            <a href="/luotian/" class="ewb-service-btn" id="罗田县">罗田县</a>
+
+                            <a href="/hongan/" class="ewb-service-btn" id="红安县">红安县</a>
+
+                            <a href="/tuanfeng/" class="ewb-service-btn" id="团风县">团风县</a>
+
+                            <a href="/huangzhou/" class="ewb-service-btn" id="黄州区">黄州区</a>
+                        </div>
+                    </li>
+                    <li class="ewb-service-tab none">
+                        <a href="javascript:void(0);">咸宁市</a>
+                        <!-- <div class="ewb-service-con">
+                            </div>-->
+                    </li>
+                    <li class="ewb-service-tab">
+                        <a href="/suizhou/">随州市</a>
+                        <div class="ewb-service-con">
+
+                            <a href="/suixian/" class="ewb-service-btn" id="随县">随县</a>
+
+                            <a href="/zengdu/" class="ewb-service-btn" id="曾都区">曾都区</a>
+
+                            <a href="/guangshui/" class="ewb-service-btn" id="广水市">广水市</a>
+                        </div>
+                    </li>
+                    <li class="ewb-service-tab ">
+                        <a href="javascript:void(0);">恩施州</a>
+                        <div class="ewb-service-con">
+
+                            <a href="javascript:void(0);" class="ewb-service-btn none" id="鹤峰县">鹤峰县</a>
+
+                            <a href="javascript:void(0);" class="ewb-service-btn none" id="来凤县">来凤县</a>
+
+                            <a href="javascript:void(0);" class="ewb-service-btn none" id="咸丰县">咸丰县</a>
+
+                            <a href="javascript:void(0);" class="ewb-service-btn none" id="巴东县">巴东县</a>
+
+                            <a href="javascript:void(0);" class="ewb-service-btn none" id="建始县">建始县</a>
+
+                            <a href="javascript:void(0);" class="ewb-service-btn none" id="利川市">利川市</a>
+
+                            <a href="/xuanen/" class="ewb-service-btn" id="宣恩县">宣恩县</a>
+
+                            <a href="javascript:void(0);" class="ewb-service-btn none" id="恩施市">恩施市</a>
+                        </div>
+                    </li>
+                    <li class="ewb-service-tab">
+                        <a href="/xiantao/">仙桃市</a>
+                        <!--<div class="ewb-service-con">
+                            </div>-->
+                    </li>
+                    <li class="ewb-service-tab">
+                        <a href="/tianmen/">天门市</a>
+                        <!-- <div class="ewb-service-con">
+                            </div>-->
+                    </li>
+                    <li class="ewb-service-tab">
+                        <a href="/qianjiang/">潜江市</a>
+                        <!-- <div class="ewb-service-con">
+                            </div>-->
+                    </li>
+                    <li class="ewb-service-tab">
+                        <a href="/shennongjia/">神农架</a>
+                        <!-- <div class="ewb-service-con">
+                            </div>-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var item = mean.innerHTML;
+        var xnml = window.location.href.split("/")[3];
+        console.log(xnml);
+        if (xnml!=""){
+            var reg = new RegExp("hubei","g");//g,表示全部替换
+            mean.innerHTML=item.replace(reg,xnml);
+        }
+
+        $("#恩施市").addClass("ewb-service-btn none");
+        $("#恩施市").attr('href', 'javascript:void(0);')
+        $("#利川市").addClass("ewb-service-btn none");
+        $("#利川市").attr('href', 'javascript:void(0);')
+        $("#建始县").addClass("ewb-service-btn none");
+        $("#建始县").attr('href', 'javascript:void(0);')
+        $("#巴东县").addClass("ewb-service-btn none");
+        $("#巴东县").attr('href', 'javascript:void(0);')
+        $("#咸丰县").addClass("ewb-service-btn none");
+        $("#咸丰县").attr('href', 'javascript:void(0);')
+        $("#来凤县").addClass("ewb-service-btn none");
+        $("#来凤县").attr('href', 'javascript:void(0);')
+        $("#鹤峰县").addClass("ewb-service-btn none");
+        $("#鹤峰县").attr('href', 'javascript:void(0);')
+
+        //获取当前日期
+        function ymdw(date) {
+            //年
+            var y = date.getFullYear();
+            //月
+            var m = date.getMonth() + 1;
+            //日
+            var d = date.getDate();
+            //周
+            var w = date.getDay();
+            var dayNames = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五",
+                "星期六");
+            return y + '年' + m + '月' + d + '日' + ' ' + dayNames[w] + ' ';
+        };
+        var date = new Date();
+        var formatDate1 = ymdw(date);
+        datetime.innerHTML = formatDate1;
+    </script>
+    <script>
+        //根据不同的栏目在头部导航栏加上cur效果
+        var lm = window.location.href.split("/")[4];
+
+        if(lm == ""){
+            $("#000").addClass("cur");
+        }else if(lm == "tzgg"){
+            $("#002").addClass("cur");
+        }else if(lm == "jyxx"){
+            $("#004").addClass("cur");
+        }else if(lm == "bszn"){
+            $("#006").addClass("cur");
+        }else if(lm == "xzzq"){
+            $("#007").addClass("cur");
+        }
+    </script>
+    <script>
+        //获取当前页面地址
+        var nowurl = window.location.href;
+        //获取虚拟目录名称
+        var xnml = nowurl.split("/")[3];
+        //加载头部图片，默认为湖北省
+        switch(xnml){
+            //省本级
+            case "shengbenji":
+                $("#logopic").attr("src","/"+xnml+"/images/szx.png");break;
+            //十堰
+            case "shiyan":
+                $("#logopic").attr("src","/"+xnml+"/images/sy.png");break;
+            //黄冈
+            case "huanggang":
+                $("#logopic").attr("src","/"+xnml+"/images/hg.png");break;
+            //石首
+            case "shishou":
+                $("#logopic").attr("src","/"+xnml+"/images/ss.png");break;
+            //松滋
+            case "songzi":
+                $("#logopic").attr("src","/"+xnml+"/images/sz.png");break;
+            //竹山
+            case "zhushan":
+                $("#logopic").attr("src","/"+xnml+"/images/zs.png");break;
+            //神农架
+            case "shennongjia":
+                $("#logopic").attr("src","/"+xnml+"/images/slj.png");break;
+            //郧西
+            case "yunxi":
+                $("#logopic").attr("src","/"+xnml+"/images/yx.png");break;
+            //江陵
+            case "jiangling":
+                $("#logopic").attr("src","/"+xnml+"/images/jlx.png");break;
+            //武穴
+            case "wuxue":
+                $("#logopic").attr("src","/"+xnml+"/images/wx.png");break;
+            //丹江口
+            case "danjiangkou":
+                $("#logopic").attr("src","/"+xnml+"/images/dj.png");break;
+            //公安
+            case "gongan":
+                $("#logopic").attr("src","/"+xnml+"/images/ga.png");break;
+            //黄梅
+            case "huangmei":
+                $("#logopic").attr("src","/"+xnml+"/images/hm.png");break;
+            //房县
+            case "fangxian":
+                $("#logopic").attr("src","/"+xnml+"/images/fx.png");break;
+            //蕲春
+            case "qichun":
+                $("#logopic").attr("src","/"+xnml+"/images/qcx.png");break;
+            //浠水
+            case "xishui":
+                $("#logopic").attr("src","/"+xnml+"/images/xs.png");break;
+            //罗田
+            case "luotian":
+                $("#logopic").attr("src","/"+xnml+"/images/lt.png");break;
+            //竹溪
+            case "zhuxi":
+                $("#logopic").attr("src","/"+xnml+"/images/zx.png");break;
+            //随州
+            case "suizhou":
+                $("#logopic").attr("src","/"+xnml+"/images/suizhou.png");break;
+            //广水
+            case "guangshui":
+                $("#logopic").attr("src","/"+xnml+"/images/gs.png");break;
+            //红安
+            case "hongan":
+                $("#logopic").attr("src","/"+xnml+"/images/hax.png");break;
+            //小池
+            case "xiaochi":
+                $("#logopic").attr("src","/"+xnml+"/images/xiaochi.png");break;
+            //郧阳
+            case "yunyang":
+                $("#logopic").attr("src","/"+xnml+"/images/yunyang.png");break;
+            //英山
+            case "yingshan":
+                $("#logopic").attr("src","/"+xnml+"/images/yingshan.png");break;
+            //黄州
+            case "huangzhou":
+                $("#logopic").attr("src","/"+xnml+"/images/huangzhou.png");break;
+            //团风
+            case "tuanfeng":
+                $("#logopic").attr("src","/"+xnml+"/images/tuanfeng.png");break;
+            //麻城
+            case "macheng":
+                $("#logopic").attr("src","/"+xnml+"/images/macheng.png");break;
+            //随县
+            case "suixian":
+                $("#logopic").attr("src","/"+xnml+"/images/suixian.png");break;
+            //曾都
+            case "zengdu":
+                $("#logopic").attr("src","/"+xnml+"/images/zengdu.png");break;
+            //孝感
+            case "xiaogan":
+                $("#logopic").attr("src","/"+xnml+"/images/xiaogan.png");break;
+            //孝南
+            case "xiaonan":
+                $("#logopic").attr("src","/"+xnml+"/images/xiaonan.png");break;
+            //孝昌
+            case "xiaochang":
+                $("#logopic").attr("src","/"+xnml+"/images/xiaochang.png");break;
+            //云梦
+            case "yunmeng":
+                $("#logopic").attr("src","/"+xnml+"/images/yunmeng.png");break;
+
+
+            //大悟
+            case "dawu":
+                $("#logopic").attr("src","/"+xnml+"/images/dawu.png");break;
+            //应城
+            case "yingcheng":
+                $("#logopic").attr("src","/"+xnml+"/images/yingcheng.png");break;
+            //汉川
+            case "hanchuan":
+                $("#logopic").attr("src","/"+xnml+"/images/hanchuan.png");break;
+            //龙感湖
+            case "longganhu":
+                $("#logopic").attr("src","/"+xnml+"/images/longganhu.png");break;
+            //安陆
+            case "anlu":
+                $("#logopic").attr("src","/"+xnml+"/images/anlu.png");break;
+            //宣恩县
+            case"xuanen":
+                $("#logopic").attr("src","/"+xnml+"/images/xuanen.png");break;
+            //监理县
+            case"jianli":
+                $("#logopic").attr("src","/"+xnml+"/images/jianli.png");break;
+            //洪湖市
+            case"honghu":
+                $("#logopic").attr("src","/"+xnml+"/images/honghu.png");break;
+            //潜江市
+            case"qianjiang":
+                $("#logopic").attr("src","/"+xnml+"/images/qianjiang.png");break;
+            //仙桃市
+            case"xiantao":
+                $("#logopic").attr("src","/"+xnml+"/images/xiantao.png");break;
+            //天門市
+            case"tianmen":
+                $("#logopic").attr("src","/"+xnml+"/images/tianmen.png");break;
+            //主站
+            default:
+                $("#logopic").attr("src","/hubei/images/logo.png");break;
+
+        }
+    </script>
+    <script>
+        //根据虚拟目录判断不同站点的智能检索类别
+        function search() {
+            //获取当前页面地址
+            var nowurl = window.location.href;
+            //获取虚拟目录名称
+            var xnml = nowurl.split("/")[3];
+            //设置智能检索的类别
+            var cnum = "";
+            switch(xnml){
+                //省本级
+                case "shengbenji":
+                    cnum = "006";break;
+                //十堰
+                case "shiyan":
+                    cnum = "023";break;
+                //黄冈
+                case "huanggang":
+                    cnum = "014";break;
+                //石首
+                case "shishou":
+                    cnum = "033";break;
+                //松滋
+                case "songzi":
+                    cnum = "039";break;
+                //竹山
+                case "zhushan":
+                    cnum = "018";break;
+                //神农架
+                case "shennongjia":
+                    cnum = "032";break;
+                //郧西
+                case "yunxi":
+                    cnum = "027";break;
+                //江陵
+                case "jiangling":
+                    cnum = "008";break;
+                //武穴
+                case "wuxue":
+                    cnum = "038";break;
+                //丹江口
+                case "danjiangkou":
+                    cnum = "024";break;
+                //公安
+                case "gongan":
+                    cnum = "009";break;
+                //黄梅
+                case "huangmei":
+                    cnum = "037";break;
+                //房县
+                case "fangxian":
+                    cnum = "040";break;
+                //蕲春
+                case "qichun":
+                    cnum = "019";break;
+                //浠水
+                case "xishui":
+                    cnum = "036";break;
+                //罗田
+                case "luotian":
+                    cnum = "016";break;
+                //竹溪
+                case "zhuxi":
+                    cnum = "045";break;
+                //随州
+                case "suizhou":
+                    cnum = "005";break;
+                //广水
+                case "guangshui":
+                    cnum = "030";break;
+                //红安
+                case "hongan":
+                    cnum = "002";break;
+                //小池
+                case "xiaochi":
+                    cnum = "010";break;
+                //郧阳
+                case "yunyang":
+                    cnum = "022";break;
+                //英山
+                case "yingshan":
+                    cnum = "042";break;
+                //黄州
+                case "huangzhou":
+                    cnum = "029";break;
+                //团风
+                case "tuanfeng":
+                    cnum = "011";break;
+                //麻城
+                case "macheng":
+                    cnum = "041";break;
+                //随县
+                case "suixian":
+                    cnum = "034";break;
+                //曾都
+                case "zengdu":
+                    cnum = "012";break;
+                //孝感
+                case "xiaogan":
+                    cnum = "013";break;
+                //孝南
+                case "xiaonan":
+                    cnum = "028";break;
+                //孝昌
+                case "xiaochang":
+                    cnum = "015";break;
+                //云梦
+                case "yunmeng":
+                    cnum = "031";break;
+                //大悟
+                case "dawu":
+                    cnum = "044";break;
+                //应城
+                case "yingcheng":
+                    cnum = "020";break;
+                //汉川
+                case "hanchuan":
+                    cnum = "021";break;
+                //龙感湖
+                case "longganhu":
+                    cnum = "004";break;
+                //安陆
+                case "anlu":
+                    cnum = "026";break;
+                //潜江市
+                case "qianjiang":
+                    cnum = "003";break;
+                //监利县
+                case "jianli":
+                    cnum = "007";break;
+                //仙桃市
+                case "xiantao":
+                    cnum = "017";break;
+                //宣恩县
+                case "xuanen":
+                    cnum = "025";break;
+                //天门市
+                case "tianmen":
+                    cnum = "035";break;
+                //洪湖市
+                case "honghu":
+                    cnum = "043";break;
+                //主站
+                default:
+                    xnml = "hubei";cnum = "001";break;
+            }
+            var wd = $("#wd").val();
+            if (!wd.trim()) {
+                alert("关键字不能为空!")
+            } else {
+                window.open("/hubei/search/fullsearch.html?wd=" + wd +"&cnum=" + cnum);
+            }
+        }
+        function searchgj() {
+
+            //获取当前页面地址
+            var nowurl = window.location.href;
+            //获取虚拟目录名称
+            var xnml = nowurl.split("/")[3];
+            //设置智能检索的类别
+            var cnum = "";
+            switch(xnml){
+                //省本级
+                case "shengbenji":
+                    cnum = "006";break;
+                //十堰
+                case "shiyan":
+                    cnum = "023";break;
+                //黄冈
+                case "huanggang":
+                    cnum = "014";break;
+                //石首
+                case "shishou":
+                    cnum = "033";break;
+                //松滋
+                case "songzi":
+                    cnum = "039";break;
+                //竹山
+                case "zhushan":
+                    cnum = "018";break;
+                //神农架
+                case "shennongjia":
+                    cnum = "032";break;
+                //郧西
+                case "yunxi":
+                    cnum = "027";break;
+                //江陵
+                case "jiangling":
+                    cnum = "008";break;
+                //武穴
+                case "wuxue":
+                    cnum = "038";break;
+                //丹江口
+                case "danjiangkou":
+                    cnum = "024";break;
+                //公安
+                case "gongan":
+                    cnum = "009";break;
+                //黄梅
+                case "huangmei":
+                    cnum = "037";break;
+                //房县
+                case "fangxian":
+                    cnum = "040";break;
+                //蕲春
+                case "qichun":
+                    cnum = "019";break;
+                //浠水
+                case "xishui":
+                    cnum = "036";break;
+                //罗田
+                case "luotian":
+                    cnum = "016";break;
+                //竹溪
+                case "zhuxi":
+                    cnum = "045";break;
+                //随州
+                case "suizhou":
+                    cnum = "005";break;
+                //广水
+                case "guangshui":
+                    cnum = "030";break;
+                //红安
+                case "hongan":
+                    cnum = "002";break;
+                //小池
+                case "xiaochi":
+                    cnum = "010";break;
+                //郧阳
+                case "yunyang":
+                    cnum = "022";break;
+                //英山
+                case "yingshan":
+                    cnum = "042";break;
+                //黄州
+                case "huangzhou":
+                    cnum = "029";break;
+                //团风
+                case "tuanfeng":
+                    cnum = "011";break;
+                //麻城
+                case "macheng":
+                    cnum = "041";break;
+                //随县
+                case "suixian":
+                    cnum = "034";break;
+                //曾都
+                case "zengdu":
+                    cnum = "012";break;
+                //孝感
+                case "xiaogan":
+                    cnum = "013";break;
+                //孝南
+                case "xiaonan":
+                    cnum = "028";break;
+                //孝昌
+                case "xiaochang":
+                    cnum = "015";break;
+                //云梦
+                case "yunmeng":
+                    cnum = "031";break;
+                //大悟
+                case "dawu":
+                    cnum = "044";break;
+                //应城
+                case "yingcheng":
+                    cnum = "020";break;
+                //汉川
+                case "hanchuan":
+                    cnum = "021";break;
+                //龙感湖
+                case "longganhu":
+                    cnum = "004";break;
+                //安陆
+                case "anlu":
+                    cnum = "026";break;
+                //潜江市
+                case "qianjiang":
+                    cnum = "003";break;
+                //监利县
+                case "jianli":
+                    cnum = "007";break;
+                //仙桃市
+                case "xiantao":
+                    cnum = "017";break;
+                //宣恩县
+                case "xuanen":
+                    cnum = "025";break;
+                //天门市
+                case "tianmen":
+                    cnum = "035";break;
+                //洪湖市
+                case "honghu":
+                    cnum = "043";break;
+                //主站
+                default:
+                    xnml = "hubei";cnum = "001";break;
+            }
+
+            window.open("/hubei/gjsearch.html?yy="+cnum);
+        }
+    </script>
+    <script>
+        //设置主页
+        function SetHome(obj,vrl){
+            try{
+                obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+            }
+            catch(e){
+                if(window.netscape) {
+                    try {
+                        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                    }
+                    catch (e) {
+                        alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                    }
+                    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                    prefs.setCharPref('browser.startup.homepage',vrl);
+                }else{
+                    alert("您的浏览器不支持，请按照下面步骤操作：1.打开浏览器设置。2.点击设置网页。3.输入："+vrl+"点击确定。");
+                }
+            }
+        }
+        //加入收藏
+        function AddFavorite(sURL, sTitle) {
+            sURL = encodeURI(sURL);
+            try{
+                window.external.addFavorite(sURL, sTitle);
+            }catch(e) {
+                try{
+                    window.sidebar.addPanel(sTitle, sURL, "");
+                }catch (e) {
+                    alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+                }
+            }
+        }
+    </script>
+</div>
 <!-- 正文 -->
 <div class="ewb-container">
     <!-- 位置 -->
@@ -46,42 +826,42 @@
             <span style="display: none;" id="infoid">8e553672-4463-44d9-bf55-79310ea552af</span>
             <h3>【湖北省中心】石首市2022年高标准农田建设项目（七、八、十、十一标段）2022年石首市横沟市镇沙包洲片区高标准农田建设项目评标结果公示(标段编号HBSJ-202211GT-003001003)</h3>
             <div class="ewb-article-sources clearfix">
-                <span></span>发布时间：2022-12-23 16:37<span></span>浏览：<span id="infoViewCount"></span>次
+                <span></span>发布时间：2022-12-23 16:37<span></span>浏览：<span id="infoViewCount">47</span>次
             </div>
             <div class="ewb-article-info">
-                <div class="ewb-article-p"  id="infoContentM">
-                    <html xmlns='http://www.w3.org/1999/xhtml'>
-                    <head>
-                        <meta charset='UTF-8' />
-                        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-                        <style type="text/css">
-                            .tab1 {
-                                text-align: center;
-                                background: url(http://www.hbbidcloud.cn:8080/TPBidder/jsgcztbmis2/images/hbpztbmark.jpg) repeat;
-                            }
+                <div class="ewb-article-p" id="infoContentM">
 
-                            .tda {
-                                height: 60px;
-                                font-size: 25px;
-                                font-family: '宋体';
-                            }
 
-                            .tdleft {
-                                text-align: left;
-                                word-wrap: break-word;
-                                line-height: 30px;
-                            }
+                    <meta charset="UTF-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <style type="text/css">
+                        .tab1 {
+                            text-align: center;
+                            background: url(http://www.hbbidcloud.cn:8080/TPBidder/jsgcztbmis2/images/hbpztbmark.jpg) repeat;
+                        }
 
-                            .tdright {
-                                text-align: right;
-                                word-wrap: break-word;
-                                line-height: 30px;
-                            }
-                        </style>
-                    </head>
-                    <body>
+                        .tda {
+                            height: 60px;
+                            font-size: 25px;
+                            font-family: '宋体';
+                        }
+
+                        .tdleft {
+                            text-align: left;
+                            word-wrap: break-word;
+                            line-height: 30px;
+                        }
+
+                        .tdright {
+                            text-align: right;
+                            word-wrap: break-word;
+                            line-height: 30px;
+                        }
+                    </style>
+
+
                     <table width="100%" border="0" class="tab1">
-                        <tr>
+                        <tbody><tr>
                             <td class="tda">
                                 <div style="word-wrap: break-word; font-size: 26px; line-height: 66px; font-weight: 900; margin-top: 70px;">招标评标结果公示</div>
                             </td>
@@ -109,9 +889,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="tda" >
+                            <td class="tda">
                                 <table width="100%" border="1" style="border-collapse: collapse">
-                                    <tr>
+                                    <tbody><tr>
                                         <td class="tda" colspan="2" width="25%">名次</td>
                                         <td class="tda" colspan="2" width="25%">第一名</td>
                                         <td class="tda" colspan="2" width="25%">第二名</td>
@@ -142,34 +922,34 @@
                                         <td class="tda" colspan="2">365</td>
                                     </tr>
                                     <tr>
-                                        <td class="tda" rowspan="4" colspan="1"  width="12%">项目负责人（如有）</td>
+                                        <td class="tda" rowspan="4" colspan="1" width="12%">项目负责人（如有）</td>
                                     </tr>
                                     <tr>
-                                        <td class="tda"  rowspan="1" colspan="1">姓名</td>
-                                        <td class="tda"  rowspan="1" colspan="2">周丽琴</td>
-                                        <td class="tda"  rowspan="1" colspan="2">马一鑫</td>
-                                        <td class="tda"  rowspan="1" colspan="2">王红兵</td>
+                                        <td class="tda" rowspan="1" colspan="1">姓名</td>
+                                        <td class="tda" rowspan="1" colspan="2">周丽琴</td>
+                                        <td class="tda" rowspan="1" colspan="2">马一鑫</td>
+                                        <td class="tda" rowspan="1" colspan="2">王红兵</td>
                                     </tr>
                                     <tr>
-                                        <td class="tda"  rowspan="1"  colspan="1">证书名称</td>
-                                        <td class="tda"  rowspan="1" colspan="2"></td>
-                                        <td class="tda"  rowspan="1" colspan="2"></td>
-                                        <td class="tda"  rowspan="1" colspan="2"></td>
+                                        <td class="tda" rowspan="1" colspan="1">证书名称</td>
+                                        <td class="tda" rowspan="1" colspan="2"></td>
+                                        <td class="tda" rowspan="1" colspan="2"></td>
+                                        <td class="tda" rowspan="1" colspan="2"></td>
                                     </tr>
                                     <tr>
-                                        <td class="tda"  rowspan="1" colspan="1">证书编号</td>
-                                        <td class="tda"  rowspan="1" colspan="2"></td>
-                                        <td class="tda"  rowspan="1" colspan="2"></td>
-                                        <td class="tda"  rowspan="1" colspan="2"></td>
+                                        <td class="tda" rowspan="1" colspan="1">证书编号</td>
+                                        <td class="tda" rowspan="1" colspan="2"></td>
+                                        <td class="tda" rowspan="1" colspan="2"></td>
+                                        <td class="tda" rowspan="1" colspan="2"></td>
                                     </tr>
                                     <tr>
                                         <td class="tda" colspan="2">投标文件中的资格审查资料（资格能力条件）</td>
-                                        <td class="tda"  colspan="6">见本公示下方附件（如有）</td>
+                                        <td class="tda" colspan="6">见本公示下方附件（如有）</td>
 
                                     </tr>
-                                </table>
-                            <td class="tda">
-                        </tr>
+                                    </tbody></table>
+                            </td><td class="tda">
+                        </td></tr>
                         <tr>
                             <td class="tda">
                                 <div class="tdleft">三、评标情况</div>
@@ -178,13 +958,13 @@
                         <tr>
                             <td class="tda">
                                 <table width="100%" border="1" style="border-collapse: collapse">
-                                    <tr>
+                                    <tbody><tr>
                                         <td class="tda" style="width: 25%">评标情况资料</td>
                                         <td class="tda" style="width: 75%">见本公示下方附件</td>
                                     </tr>
-                                </table>
-                            <td class="tda">
-                        </tr>
+                                    </tbody></table>
+                            </td><td class="tda">
+                        </td></tr>
                         <tr>
                             <td class="tda">
                                 <div class="tdleft">四、公示时间</div>
@@ -266,8 +1046,8 @@
                             <td class="tda">
                                 <div class="tdright">
                                     <u>招标人\招标代理机构：信利达（大连）项目管理咨询有限公司 （盖单位章）
-                                </div>
-                            </td>
+                                    </u></div><u>
+                            </u></td>
                         </tr>
                         <tr>
                             <td class="tda">
@@ -281,11 +1061,11 @@
                                 </div>
                             </td>
                         </tr>
-                    </table>
-                    </body>
-                    </html></div>
+                        </tbody></table>
+
+                </div>
             </div>
-        </div><input type="hidden" id="souceinfoid" value="8e553672-4463-44d9-bf55-79310ea552af"/>
+        </div><input type="hidden" id="souceinfoid" value="8e553672-4463-44d9-bf55-79310ea552af">
         <!-- <script type="text/javascript">
     $("#infoContentM").find("span").attr("style", "font-size: 18px;line-height: 24px;text-indent: 2em;");
     $(".changeSize").on('click', function(){
@@ -310,7 +1090,261 @@
     </div>
 </div>
 <!-- footer -->
-<div id="footer"></div>
+<div id="footer"><!-- footer -->
+    <div class="ewb-footer ewb-mt20">
+        <span id="viewGuid" value="home"></span>
+        <div class="ewb-link">
+            <div class="ewb-container clearfix">
+                <div class="ewb-link-box l">
+                    <select class="ewb-select first" name="" id="year" onchange="OpenSelect(this.value)" style="display: none;">
+                        <option value="javascript:void(0);">省直部门网站</option>
+
+
+                        <option value="http://www.hubei.gov.cn/">湖北省人民政府</option>
+
+                        <option value="http://fgw.hubei.gov.cn/">湖北省发展和改革委员会</option>
+
+                        <option value="http://jyt.hubei.gov.cn/">湖北省教育厅</option>
+
+                        <option value="http://www.hbstd.gov.cn/">湖北省科学技术厅</option>
+
+                        <option value="http://jxt.hubei.gov.cn/">湖北省经济和信息化厅</option>
+
+                        <option value="http://mzw.hubei.gov.cn/">湖北省民族宗教事务委员会</option>
+
+                        <option value="http://gat.hubei.gov.cn/">湖北省公安厅</option>
+
+                        <option value="http://mzt.hubei.gov.cn/">湖北省民政厅</option>
+
+                        <option value="http://sft.hubei.gov.cn/">湖北省司法厅</option>
+
+                        <option value="http://czt.hubei.gov.cn/">湖北省财政厅</option>
+
+                        <option value="http://rst.hubei.gov.cn/html/index.html">湖北省人力资源和社会保障厅</option>
+
+                        <option value="http://zrzyt.hubei.gov.cn/html/index.html">湖北省自然资源厅</option>
+
+                        <option value="http://sthjt.hubei.gov.cn/">湖北省生态环境厅</option>
+
+                        <option value="http://zjt.hubei.gov.cn/ ">湖北省住房和城乡建设厅</option>
+
+                        <option value="http://www.hbjt.gov.cn/">湖北省交通运输厅</option>
+
+                        <option value="http://slt.hubei.gov.cn/">湖北省水利厅</option>
+
+                        <option value="http://nyt.hubei.gov.cn/">湖北省农业农村厅</option>
+
+                        <option value="http://swt.hubei.gov.cn/">湖北省商务厅</option>
+
+                        <option value="https://wlt.hubei.gov.cn/">湖北省文化和旅游厅</option>
+
+                        <option value="http://gxs.hubei.gov.cn/">湖北省供销社</option>
+
+                        <option value="http://hb.cma.gov.cn/index.action">湖北省气象局</option>
+
+                        <option value="http://jycg.hubei.gov.cn/">湖北省公共资源交易中心（湖北省政府采购中心）</option>
+
+                        <option value="http://dzj.hubei.gov.cn/">湖北省地质局</option>
+
+                        <option value="http://wjw.hubei.gov.cn/">湖北省卫生健康委员会</option>
+
+                        <option value="http://va.hubei.gov.cn/">湖北省退役军人事务厅</option>
+
+                        <option value="http://yjt.hubei.gov.cn/">湖北省应急管理厅</option>
+
+                        <option value="http://sjt.hubei.gov.cn/">湖北省审计厅</option>
+
+                        <option value="http://gzw.hubei.gov.cn/">湖北省国有资产监督管理委员会</option>
+
+                        <option value="http://scjg.hubei.gov.cn/">湖北省市场监督管理局</option>
+
+                        <option value="http://gdj.hubei.gov.cn/">湖北省广播电视局</option>
+
+                        <option value="http://tyj.hubei.gov.cn/">湖北省体育局</option>
+
+                        <option value="http://tjj.hubei.gov.cn/">湖北省统计局</option>
+
+                        <option value="http://www.hubei.gov.cn/#">湖北省医疗保障局</option>
+
+                        <option value="http://rfb.hubei.gov.cn/">湖北省人民防空办公室</option>
+
+                        <option value="http://zys.hubei.gov.cn/">湖北省政府研究室</option>
+
+                        <option value="http://jgswj.hubei.gov.cn/">湖北省机关事务管理局</option>
+
+                        <option value="http://lsj.hubei.gov.cn/">湖北省粮食局</option>
+
+                        <option value="http://jyj.hubei.gov.cn/">湖北省监狱管理局</option>
+
+                        <option value="http://lyj.hubei.gov.cn/">湖北省林业局</option>
+
+                        <option value="http://fda.hubei.gov.cn/">湖北省药品监督管理局</option>
+
+                        <option value="http://zscqj.hubei.gov.cn/">湖北省知识产权局</option>
+                    </select><div class="chosen-container chosen-container-single ewb-select first" title="" id="year_chosen" style="width: 378px;"><a class="chosen-single">
+                    <span>省直部门网站</span>
+                    <div><b></b></div>
+                </a>
+                    <div class="chosen-drop">
+                        <div class="chosen-search">
+                            <input class="chosen-search-input" type="text" autocomplete="off">
+                        </div>
+                        <ul class="chosen-results"></ul>
+                    </div></div>
+                </div>
+                <div class="ewb-link-box l">
+                    <select class="ewb-select" name="" id="year" onchange="OpenSelect(this.value)" style="display: none;">
+                        <option value="javascript:void(0);">市州交易中心</option>
+
+
+                        <option value="http://www.jy.whzbtb.com/V2PRTS/">武汉市</option>
+
+                        <option value="http://jyzx.xiangyang.gov.cn/">襄阳市</option>
+
+                        <option value="http://ggzyjyzx.yichang.gov.cn/">宜昌市</option>
+
+                        <option value="http://www.hsztbzx.com/">黄石市</option>
+
+                        <option value="http://ggzyjy.shiyan.gov.cn/">十堰市</option>
+
+                        <option value="http://www.jzggzy.com/">荆州市</option>
+
+                        <option value="http://zyjy.jingmen.gov.cn/">荆门市</option>
+
+                        <option value="http://ggzyjy.ezhou.gov.cn/">鄂州市</option>
+
+                        <option value="http://xgxz.xiaogan.gov.cn/">孝感市</option>
+
+                        <option value="http://ggzy.hg.gov.cn/ceinwz/indexhg.htm">黄冈市</option>
+
+                        <option value="http://xnztb.xianning.gov.cn/">咸宁市</option>
+
+                        <option value="http://www.hbbidcloud.cn/suizhou/">随州市</option>
+
+                        <option value="http://www.eszggzy.cn/">恩施自治州</option>
+
+                        <option value="http://www.xtggzy.com/">仙桃市</option>
+
+                        <option value="http://ztb.tianmen.gov.cn/">天门市</option>
+
+                        <option value="http://www.qjggzy.cn/qjztb/gy_index.do">潜江市</option>
+
+                        <option value="http://221.234.48.107:8081/">神农架林区</option>
+                    </select><div class="chosen-container chosen-container-single ewb-select" title="" id="year_chosen" style="width: 378px;"><a class="chosen-single">
+                    <span>市州交易中心</span>
+                    <div><b></b></div>
+                </a>
+                    <div class="chosen-drop">
+                        <div class="chosen-search">
+                            <input class="chosen-search-input" type="text" autocomplete="off">
+                        </div>
+                        <ul class="chosen-results"></ul>
+                    </div></div>
+                </div>
+                <div class="ewb-link-box l">
+                    <select class="ewb-select" name="" id="year" onchange="OpenSelect(this.value)" style="display: none;">
+                        <option value="javascript:void(0);">其他网站</option>
+                    </select><div class="chosen-container chosen-container-single ewb-select chosen-container-single-nosearch" title="" id="year_chosen" style="width: 378px;"><a class="chosen-single">
+                    <span>其他网站</span>
+                    <div><b></b></div>
+                </a>
+                    <div class="chosen-drop">
+                        <div class="chosen-search">
+                            <input class="chosen-search-input" type="text" autocomplete="off" readonly="">
+                        </div>
+                        <ul class="chosen-results"></ul>
+                    </div></div>
+                </div>
+            </div>
+        </div>
+        <div class="ewb-container">
+            <div class="ewb-footer-link">
+
+
+                <a href="/hubei/lxwm/about.html">联系我们</a>
+                <span>|</span>
+
+                <a href="/hubei/gywm/about.html">关于我们</a>
+                <span>|</span>
+                <a href="javascript:void(0);" onclick="SetHome(this,window.location)" style="cursor:hand">设为首页</a>
+                <span>|</span>
+                <a href="javascript:void(0);" onclick="AddFavorite(window.location,document.title)" style="cursor:hand">加入收藏</a>
+            </div>
+            <div class="ewb-copy">
+                <p>主办单位：湖北省公共资源交易中心（湖北省政府采购中心）  鄂ICP备07006841号-13 鄂公网安备 42010602001183号</p>
+                <p>湖北省武汉市武昌区中北路252号（岳家嘴地铁站G出口）</p>
+                <p>技术支持：国泰新点软件股份有限公司</p>
+                <a href="http://bszs.conac.cn/sitename?method=show&amp;id=54918B9009DD6A86E053012819AC70B5" class="ewb-footer-img1" style="left: 125px;">
+                    <img src="/hubei/images/footer_img1.png" alt="">
+                </a>
+
+
+                <div class="jiucuo" style="top: 0px;position: absolute;">
+                    <a id="_span_jiucuo"><img onclick="Link('4200000101')" style="margin:0;border:0;cursor: pointer;" src="https://zfwzgl.www.gov.cn/exposure/images/jiucuo.png?v=4200000101"></a>
+                </div>
+
+                <a href="http://www.hbbidcloud.cn/hubei/tzgg/20220704/222259bf-7efa-4e42-a3c4-fce7dd14e44b.html" target="_blank" class="ewb-footer-img3 ">
+                    <img src="/hubei/images/download.png" alt="">
+                </a>
+                <a href="javascript:void(0);" class="ewb-footer-img4" style="right: 180px;">
+                    <img class="l" src="/hubei/images/wxcode.jpg" alt="">
+                    <div class="l">
+                        <p class="ewb-footer-p">湖北省</p>
+                        <p class="ewb-footer-p">公共资源交易中心</p>
+                        <p class="ewb-footer-p">微信公众号</p>
+                    </div>
+                </a>
+                <a href="javascript:void(0);" class="ewb-footer-img5" style="right: 0px;">
+                    <img class="l" src="/hubei/images/rwm.png" alt="" style="width:76px;height:76px">
+                    <div class="l">
+                        <p class="ewb-footer-p">湖北省公共资源</p>
+                        <p class="ewb-footer-p">手机APP</p>
+                        <p class="ewb-footer-p">掌上交易系统</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+    <script>
+        //设置主页
+        function SetHome(obj,vrl){
+            try{
+                obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+            }
+            catch(e){
+                if(window.netscape) {
+                    try {
+                        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                    }
+                    catch (e) {
+                        alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                    }
+                    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                    prefs.setCharPref('browser.startup.homepage',vrl);
+                }else{
+                    alert("您的浏览器不支持，请按照下面步骤操作：1.打开浏览器设置。2.点击设置网页。3.输入："+vrl+"点击确定。");
+                }
+            }
+        }
+
+        //加入收藏
+        function AddFavorite(sURL, sTitle) {
+            sURL = encodeURI(sURL);
+            try{
+                window.external.addFavorite(sURL, sTitle);
+            }catch(e) {
+                try{
+                    window.sidebar.addPanel(sTitle, sURL, "");
+                }catch (e) {
+                    alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+                }
+            }
+        }
+    </script>
+</div>
 <!-- 页面脚本 -->
 <script src="/shengbenji/js/webBuilderCommon.js"></script>
 <script src="/shengbenji/js/lib/chosen/chosen.jquery.js"></script>
@@ -319,6 +1353,8 @@
 <script src="/shengbenji/js/lib/tabview.js"></script>
 <script src="/shengbenji/js/pageView.js"></script>
 
-</body>
 
+
+
+</body>
 </html>
