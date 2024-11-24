@@ -1,0 +1,129 @@
+/**!
+ * é»”è¥¿å—å·žå…¬å…±èµ„æºäº¤æ˜“ä¸­å¿ƒ-é¦–é¡µ
+ * author: gaojian;
+ * date:2018-07-19
+ */
+
+/* ä½ç½® */ 
+a {
+	text-decoration: none;
+}
+
+.ewb-location {
+	height:43px;
+	line-height:43px;
+	font-size:15px;
+	font-weight:bold;
+	color:#5a5a5a;
+	text-align: left;
+}
+
+.ewb-location a {
+	color:#5a5a5a;
+	margin-right:5px;
+	font-weight:normal;
+}
+
+/* .ewb-location span {
+	color: #ff8b17;
+}
+  */
+/* article */
+.ewb-article {
+	padding: 25px 0;
+}
+
+.ewb-article h3 {
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 40px;
+	text-align: center;
+	font-family: "Microsoft YaHei";
+}
+
+.ewb-article-sources {
+	position: relative;
+	margin-top: 25px;
+	line-height: 38px;
+	text-align: center;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	color: #999;
+	background-color: #f7f7f7;
+}
+
+.ewb-article-font {
+	position: absolute;
+	top: 0;
+	right: 40px;
+}
+
+.ewb-article-sources span {
+	margin: 0 16px;
+}
+
+.ewb-article-sources a {
+	margin: 0 5px;
+	color: #666;
+}
+
+.ewb-article-sources a.cur {
+	color: #1492ff;
+}
+
+.ewb-article-info {
+	padding: 32px 42px 94px;
+	border-bottom: 1px dashed #d8d8d8;
+}
+
+.ewb-article-p {
+	line-height: 32px;
+	font-size: 14px;
+	text-indent: 2em;
+	font-family: "Microsoft YaHei";
+}
+
+.ewb-article-img {
+	display: block;
+	margin: 34px auto;
+}
+
+.ewb-article-add {
+	padding: 20px 20px 0;
+	font-family: "Microsoft YaHei";
+}
+
+.ewb-article-add div {
+	width: 48%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ewb-article-add div.r {
+	text-align: right;
+}
+
+.ewb-article-add span {
+	color: #1492ff;
+}
+
+.ewb-article-add a {
+	color: #333;
+}
+
+.DSDiv {
+	position: relative!important;
+}
+
+.ewb-18size{
+	font-size: 18px !important;
+}
+
+.ewb-16size{
+	font-size: 16px !important;
+}
+
+.ewb-14size{
+	font-size: 14px !important;
+}

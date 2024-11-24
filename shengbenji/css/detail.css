@@ -1,0 +1,139 @@
+/* sel */
+
+.chosen-container-single .chosen-single{
+    padding: 0 8px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+.chosen-container-single .chosen-single span{
+    margin-right: 0;
+}
+
+.chosen-container-single .chosen-single div{
+    display: none;
+}
+
+.chosen-container .chosen-results li.active-result{
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+}
+
+/* location */
+
+.ewb-location{
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    background: url('../images/location_icon.jpg') left center no-repeat;
+    padding-left: 19px;
+}
+
+.ewb-location a{
+    color: #333;
+}
+
+.ewb-location span{
+    color: #cc1212;
+}
+
+/* info */
+
+.ewb-info{
+    border: 1px solid #e5e5e5;
+    padding: 0 44px;
+}
+
+h2.ewb-info-tt{
+    font-size: 28px;
+    padding-top: 34px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.ewb-info-intro{
+    margin: 20px 0;
+    line-height: 24px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+
+.ewb-info-intro a{
+    color: #999;
+}
+
+.ewb-info-p{
+    line-height: 24px;
+    font-size: 14px;
+    /* text-indent: 2em; */
+	text-indent: 5px;
+}
+
+.ewb-info-img{
+    margin: 24px 0;
+    text-align: center;
+}
+
+.ewb-info-img img{
+    vertical-align: top;
+}
+
+.ewb-info-next{
+    border-top: 1px dashed #d8d8d8;
+    margin-top: 35px;
+    padding: 20px 0 30px 0;
+}
+
+.ewb-info-next a{
+    width: 40%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 18px;
+    line-height: 18px;
+    font-size: 14px;
+    border-left: 4px solid #104fae;
+    padding-left: 6px;
+}
+
+.ewb-info-next a b{
+    font-weight: bold;
+    color: #104fae;
+}
+
+.ewb-info-next a span{
+    color: #333;
+    margin-left: 10px;
+}
+
+.ewb-info-l{
+    float: left;
+}
+
+.ewb-info-r{
+    float: right;
+}
+
+img{
+	max-width: 1008px;
+	margin: auto;
+}
+
+table.noBorderTable td,table.noBorderTable th,table.noBorderTable caption {
+		border: 1px dashed #ddd !important
+	}
+
+	table {
+		margin-bottom: 10px;
+		border-collapse: collapse;
+		display: table;
+	}
+
+	td,th {
+		padding: 5px 10px;
+		border: 1px solid #DDD;
+	}
